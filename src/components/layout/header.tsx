@@ -35,9 +35,6 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Button asChild>
-            <Link href="#contact">Get a Quote</Link>
-          </Button>
         </nav>
 
         {/* Mobile Navigation */}
