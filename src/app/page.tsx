@@ -247,13 +247,6 @@ function ContactSection() {
                 <a href="tel:+916302379590" className="text-muted-foreground hover:text-primary transition-colors">+91-6302379590</a>
               </div>
             </div>
-             <div className="flex items-center gap-4">
-              <Mail className="w-8 h-8 text-primary" />
-              <div>
-                <h3 className="font-headline text-xl font-semibold">Email</h3>
-                <a href="mailto:aatifahmad0710@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">aatifahmad0710@gmail.com</a>
-              </div>
-            </div>
             <div className="flex items-center gap-4">
               <MapPin className="w-8 h-8 text-primary" />
               <div>
