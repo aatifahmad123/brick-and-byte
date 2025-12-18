@@ -6,7 +6,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { ContactForm } from '@/components/contact-form';
+
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
 
@@ -237,7 +237,7 @@ function ContactSection() {
           <h2 className="font-headline text-4xl md:text-5xl font-bold">Get in Touch</h2>
           <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">Ready to build your digital foundation? Contact us today.</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-md mx-auto">
           <div className="flex flex-col justify-center space-y-8">
             <div className="flex items-center gap-4">
               <Phone className="w-8 h-8 text-primary" />
@@ -261,16 +261,6 @@ function ContactSection() {
                 <p className="text-muted-foreground">Gurgaon, Jodhpur</p>
               </div>
             </div>
-          </div>
-          <div>
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl">Send us a message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ContactForm />
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
