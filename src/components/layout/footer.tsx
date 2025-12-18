@@ -3,7 +3,7 @@ import { Code, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-accent">
+    <footer className="bg-card">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           <div className="flex flex-col items-center md:items-start">
@@ -20,6 +20,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link></li>
               <li><Link href="#why-us" className="text-muted-foreground hover:text-primary transition-colors">Why Us</Link></li>
+              <li><Link href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors">Testimonials</Link></li>
               <li><Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>

@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CodeXml, LayoutPanelLeft, Building2, Wrench, CircleDollarSign, Rocket, Palette, Users, Phone, MapPin } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { ContactForm } from '@/components/contact-form';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
 
@@ -17,6 +18,7 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <WhyChooseUsSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
@@ -132,7 +134,7 @@ const whyChooseUsItems = [
 
 function WhyChooseUsSection() {
   return (
-    <section id="why-us" className="py-20 lg:py-32 bg-accent">
+    <section id="why-us" className="py-20 lg:py-32 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">Why Choose Us?</h2>
@@ -140,7 +142,7 @@ function WhyChooseUsSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyChooseUsItems.map((item, index) => (
-            <Card key={index} className="text-center bg-card hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
+            <Card key={index} className="text-center bg-background hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
               <CardHeader className="items-center">
                 {item.icon}
                 <CardTitle className="font-headline mt-4 text-2xl">{item.title}</CardTitle>
@@ -148,6 +150,59 @@ function WhyChooseUsSection() {
               <CardContent>
                 <p className="text-muted-foreground">{item.description}</p>
               </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const testimonials = [
+  {
+    quote: "Brick & Byte delivered a website that exceeded our expectations. The design is clean, modern, and perfectly represents our brand. The process was seamless and incredibly fast!",
+    name: "Aarav Sharma",
+    title: "Owner, Local Cafe",
+    avatar: "https://i.pravatar.cc/150?u=aarav",
+  },
+  {
+    quote: "As a startup, we needed a professional and affordable web presence. Brick & Byte was the perfect partner. They understood our vision and brought it to life on a tight budget.",
+    name: "Priya Singh",
+    title: "Founder, Tech Startup",
+    avatar: "https://i.pravatar.cc/150?u=priya",
+  },
+  {
+    quote: "The team's attention to detail and commitment to quality is outstanding. Our new landing page has significantly improved our lead generation. Highly recommended!",
+    name: "Rohan Mehta",
+    title: "Marketing Manager",
+    avatar: "https://i.pravatar.cc/150?u=rohan",
+  },
+]
+
+function TestimonialsSection() {
+  return (
+    <section id="testimonials" className="py-20 lg:py-32 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="font-headline text-4xl md:text-5xl font-bold">What Our Clients Say</h2>
+          <p className="text-lg text-muted-foreground mt-2">Real stories from satisfied partners.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className="flex flex-col justify-between bg-card">
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+              </CardContent>
+              <CardFooter className="flex items-center gap-4 mt-4">
+                <Avatar>
+                  <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                  <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                </div>
+              </CardFooter>
             </Card>
           ))}
         </div>
