@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { CodeXml, LayoutPanelLeft, Building2, Wrench, CircleDollarSign, Rocket, Palette, Users, Phone, MapPin } from 'lucide-react';
+import { CodeXml, LayoutPanelLeft, Building2, Wrench, CircleDollarSign, Rocket, Palette, Users, Phone, MapPin, Mail } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import { ContactForm } from '@/components/contact-form';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
@@ -93,7 +92,7 @@ function ServicesSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="text-center hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
+            <Card key={index} className="text-center bg-card hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
               <CardHeader className="items-center">
                 {service.icon}
                 <CardTitle className="font-headline mt-4 text-2xl">{service.title}</CardTitle>
@@ -159,25 +158,44 @@ function WhyChooseUsSection() {
 }
 
 const testimonials = [
-  {
-    quote: "Brick & Byte delivered a website that exceeded our expectations. The design is clean, modern, and perfectly represents our brand. The process was seamless and incredibly fast!",
-    name: "Aarav Sharma",
-    title: "Owner, Local Cafe",
-    avatar: "https://i.pravatar.cc/150?u=aarav",
-  },
-  {
-    quote: "As a startup, we needed a professional and affordable web presence. Brick & Byte was the perfect partner. They understood our vision and brought it to life on a tight budget.",
-    name: "Priya Singh",
-    title: "Founder, Tech Startup",
-    avatar: "https://i.pravatar.cc/150?u=priya",
-  },
-  {
-    quote: "The team's attention to detail and commitment to quality is outstanding. Our new landing page has significantly improved our lead generation. Highly recommended!",
-    name: "Rohan Mehta",
-    title: "Marketing Manager",
-    avatar: "https://i.pravatar.cc/150?u=rohan",
-  },
-]
+    {
+      quote: "Brick & Byte delivered a website that exceeded our expectations. The design is clean, modern, and perfectly represents our brand. The process was seamless and incredibly fast!",
+      name: "Aarav Sharma",
+      title: "Owner, Local Cafe",
+      avatar: "https://i.pravatar.cc/150?u=aarav",
+    },
+    {
+      quote: "As a startup, we needed a professional and affordable web presence. Brick & Byte was the perfect partner. They understood our vision and brought it to life on a tight budget.",
+      name: "Priya Singh",
+      title: "Founder, Tech Startup",
+      avatar: "https://i.pravatar.cc/150?u=priya",
+    },
+    {
+      quote: "The team's attention to detail and commitment to quality is outstanding. Our new landing page has significantly improved our lead generation. Highly recommended!",
+      name: "Rohan Mehta",
+      title: "Marketing Manager",
+      avatar: "https://i.pravatar.cc/150?u=rohan",
+    },
+     {
+      quote: "I was impressed with their professionalism and skill. They listened to my needs and created a website that's both beautiful and functional. I've already seen an increase in customer inquiries.",
+      name: "Anika Verma",
+      title: "Freelance Photographer",
+      avatar: "https://i.pravatar.cc/150?u=anika",
+    },
+    {
+      quote: "Their transparent pricing and quick turnaround time were exactly what my small business needed. A fantastic experience from start to finish.",
+      name: "Vikram Reddy",
+      title: "Owner, Local Bookstore",
+      avatar: "https://i.pravatar.cc/150?u=vikram",
+    },
+    {
+      quote: "Working with Brick & Byte was a breeze. They are responsive, creative, and truly understand how to build for the web. I couldn't be happier with the final product.",
+      name: "Isha Kapoor",
+      title: "Yoga Instructor",
+      avatar: "https://i.pravatar.cc/150?u=isha",
+    },
+  ]
+  
 
 function TestimonialsSection() {
   return (
@@ -215,18 +233,23 @@ function ContactSection() {
   return (
     <section id="contact" className="py-20 lg:py-32">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">Get in Touch</h2>
-          <p className="text-lg text-muted-foreground mt-2">Ready to build your digital foundation? Contact us today.</p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="flex flex-col justify-center space-y-8">
+          <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">Ready to build your digital foundation? We'd love to hear from you. Reach out to us via phone or email.</p>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-12 mt-12">
             <div className="flex items-center gap-4">
               <Phone className="w-8 h-8 text-primary" />
               <div>
                 <h3 className="font-headline text-xl font-semibold">Phone</h3>
                 <a href="tel:+916207392585" className="text-muted-foreground hover:text-primary transition-colors">+91-6207392585</a><br/>
                 <a href="tel:+916302379590" className="text-muted-foreground hover:text-primary transition-colors">+91-6302379590</a>
+              </div>
+            </div>
+             <div className="flex items-center gap-4">
+              <Mail className="w-8 h-8 text-primary" />
+              <div>
+                <h3 className="font-headline text-xl font-semibold">Email</h3>
+                <a href="mailto:aatifahmad0710@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">aatifahmad0710@gmail.com</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -236,16 +259,6 @@ function ContactSection() {
                 <p className="text-muted-foreground">Gurgaon, Jodhpur</p>
               </div>
             </div>
-          </div>
-          <div>
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl">Send us a message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ContactForm />
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

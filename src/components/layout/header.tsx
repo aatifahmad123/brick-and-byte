@@ -72,13 +72,6 @@ export default function Header() {
                     </SheetClose>
                   ))}
                 </nav>
-                <div className="mt-auto">
-                    <SheetClose asChild>
-                      <Button asChild className='w-full' size="lg">
-                          <Link href="#contact">Get a Quote</Link>
-                      </Button>
-                    </SheetClose>
-                </div>
               </div>
             </SheetContent>
           </Sheet>
