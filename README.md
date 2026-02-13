@@ -1,5 +1,3 @@
-# Firebase Studio
+# Brick and Byte Web Agency
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+We build high-quality websites for small businesses, startups, and local brands. Clean design, fast performance, and practical solutions.
