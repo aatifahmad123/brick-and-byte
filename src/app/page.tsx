@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,7 +10,10 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 
+
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
+
+import { useInView } from '@/hooks/use-in-view';
 
 export default function Home() {
   return (
@@ -32,7 +37,7 @@ function HeroSection() {
     <section id="home" className="relative h-dvh flex items-center justify-center text-center text-foreground bg-lines-pattern overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
       <div className="relative z-10 flex flex-col items-center p-4">
-        <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight mb-4 animate-fade-in-down">
+        <h1 className="font-headline text-3xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight mb-4 animate-fade-in-down">
           Strong Foundations for Your <span className="text-primary">Digital Presence</span>
         </h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8 animate-fade-in-up">
@@ -105,11 +110,16 @@ const pricingPackages = [
 ];
 
 function PricingSection() {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
   return (
     <section id="pricing" className="py-12 lg:py-24 bg-accent">
-      <div className="container mx-auto px-4">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 transition-all duration-700 transform ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      >
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Our Website Packages</h2>
+          <h2 className="font-headline text-3xl md:text-5xl font-bold">Our Website Packages</h2>
           <p className="text-lg text-muted-foreground mt-2">Transparent pricing. No hidden fees.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -171,11 +181,16 @@ const services = [
 ];
 
 function ServicesSection() {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
   return (
     <section id="services" className="py-12 lg:py-24">
-      <div className="container mx-auto px-4">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 transition-all duration-700 transform ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      >
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Our Services</h2>
+          <h2 className="font-headline text-3xl md:text-5xl font-bold">Our Services</h2>
           <p className="text-lg text-muted-foreground mt-2">Everything you need to grow online.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -220,11 +235,16 @@ const whyChooseUsItems = [
 ];
 
 function WhyChooseUsSection() {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
   return (
     <section id="why-us" className="py-20 lg:py-32 bg-accent">
-      <div className="container mx-auto px-4">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 transition-all duration-700 transform ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      >
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Why Choose Us?</h2>
+          <h2 className="font-headline text-3xl md:text-5xl font-bold">Why Choose Us?</h2>
           <p className="text-lg text-muted-foreground mt-2">The Brick & Byte Advantage</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -268,11 +288,16 @@ const testimonials = [
 
 
 function TestimonialsSection() {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
   return (
     <section id="testimonials" className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-4">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 transition-all duration-700 transform ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      >
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">What Our Clients Say</h2>
+          <h2 className="font-headline text-3xl md:text-5xl font-bold">What Our Clients Say</h2>
           <p className="text-lg text-muted-foreground mt-2">Real stories from satisfied partners.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -299,11 +324,16 @@ function TestimonialsSection() {
 }
 
 function ContactSection() {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
   return (
     <section id="contact" className="py-12 lg:py-24 bg-accent">
-      <div className="container mx-auto px-4">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 transition-all duration-700 transform ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      >
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Get in Touch</h2>
+          <h2 className="font-headline text-3xl md:text-5xl font-bold">Get in Touch</h2>
           <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">Ready to build your digital foundation? Contact us today.</p>
         </div>
         <div className="max-w-md mx-auto">

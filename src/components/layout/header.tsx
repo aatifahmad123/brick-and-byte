@@ -23,7 +23,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="#home" className="flex items-center gap-2">
           <Code className="h-8 w-8 text-primary" />
-          <span className="font-headline text-xl font-bold">Brick and Byte Web Agency</span>
+          <span className="font-headline text-xl font-bold">Brick & Byte Web Agency</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -56,14 +56,8 @@ export default function Header() {
                 <div className="flex items-center justify-between mb-8">
                   <Link href="#home" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                     <Code className="h-8 w-8 text-primary" />
-                    <span className="font-headline text-xl font-bold">Brick and Byte Web Agency</span>
+                    <span className="font-headline text-xl font-bold">Brick & Byte Web Agency</span>
                   </Link>
-                  <SheetClose asChild>
-                    <Button variant="ghost" size="icon">
-                      <X className="h-6 w-6" />
-                      <span className="sr-only">Close menu</span>
-                    </Button>
-                  </SheetClose>
                 </div>
                 <nav className="flex flex-col gap-6 text-lg">
                   {navItems.map((item) => (
